@@ -30,7 +30,7 @@ do
 
     Ntarea.TareaID = IdTarea++;
     Ntarea.Descripcion = DescripcionTarea;
-    duracion = rand.Next(1, 61);
+    Ntarea.Duracion = rand.Next(1, 61);
 
     tareasPendientes.Add(Ntarea);
 

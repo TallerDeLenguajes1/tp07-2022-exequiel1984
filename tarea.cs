@@ -3,13 +3,18 @@ namespace tp07_2022_exequiel1984
 {
     public class tarea {
         private int tareaID;
-        private string descripcion;
+        private string? descripcion;
         private int duracion;
 
         public int TareaID { get => tareaID; set => tareaID = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int Duracion { get => duracion; set => duracion = value; }
 
+        public tarea(){
+            tareaID=0;
+            descripcion="";
+            duracion=0;
+        }
         public tarea(int tareaID, string descripcion, int duracion){
             this.TareaID = tareaID;
             if(!string.IsNullOrEmpty(descripcion)) Descripcion = descripcion; else Descripcion = "";
@@ -17,10 +22,6 @@ namespace tp07_2022_exequiel1984
             this.Duracion = duracion;
 
         } 
-
-/*         public tarea(){
-
-        } */
 
         public void cargarTarea(int i, string descripcion, int duracion){
             this.TareaID = i+1;
