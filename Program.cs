@@ -1,6 +1,6 @@
 ﻿using tp07_2022_exequiel1984;
 
-string descripcion ="";
+string descripcion;
 int duracion;
 
 
@@ -11,7 +11,7 @@ List<tarea> tareasPendientes = new List<tarea>();
 Console.WriteLine("Ingrese la cantidad de tareas a cargar: ");
 int cantidadTareas = Convert.ToInt32(Console.ReadLine());
 
-for (int i = 0; i <=  cantidadTareas; i++)
+for (int i = 0; i <= cantidadTareas; i++)
 {
     tarea tarea = new tarea();
     Console.WriteLine("Ingrese la descripcion: ");
