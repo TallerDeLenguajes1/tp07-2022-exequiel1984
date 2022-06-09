@@ -38,7 +38,7 @@ do
     salida = Console.ReadLine();
 } while (salida != "n");
 
-
+System.Console.WriteLine("\nListado de tareas cargadas\n");
 foreach (var tarea in tareasPendientes)
 {
     tarea.mostrarTarea();
