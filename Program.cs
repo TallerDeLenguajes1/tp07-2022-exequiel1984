@@ -32,9 +32,7 @@ do
 
 System.Console.WriteLine("\n-----Listado de tareas pendientes cargadas-----\n");
 foreach (var TareaPendiente in ListadotareasPendientes)
-{
     TareaPendiente.mostrarTarea();
-}
 
 System.Console.WriteLine("\n-----Control de tareas realizadas-----\n");
 foreach (var tareaPendiente in ListadotareasPendientes)
@@ -50,29 +48,21 @@ ListadotareasPendientes = ListadotareasPendientes.Except(ListadotareasRealizadas
 
 System.Console.WriteLine("\n-----Listado de tareas pendientes-----\n");
 foreach (var TareaPendiente in ListadotareasPendientes)
-{
     TareaPendiente.mostrarTarea();
-}
 
 System.Console.WriteLine("\n-----Listado de tareas realizadas-----\n");
 foreach (var TareaRealizada in ListadotareasRealizadas)
-{
     TareaRealizada.mostrarTarea();
-}
 
 System.Console.WriteLine("-----Ingrese la descripcion de la tarea a buscar:");
 PalabraClave = Console.ReadLine();
 foreach (var tareaPendiente in ListadotareasPendientes)
-{
     tareaPendiente.buscarTarea(PalabraClave);
-}
-foreach (var tareaRealizada in ListadotareasRealizadas)
-{
-    tareaRealizada.buscarTarea(PalabraClave);
-}
 
 foreach (var tareaRealizada in ListadotareasRealizadas)
-{
+    tareaRealizada.buscarTarea(PalabraClave);
+
+foreach (var tareaRealizada in ListadotareasRealizadas)
     MinutosTrabajados += tareaRealizada.Duracion;
-}
+
 System.Console.WriteLine("\nTotal de minutos trabajados por el empleado: " + MinutosTrabajados);
