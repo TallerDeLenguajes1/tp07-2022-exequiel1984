@@ -7,6 +7,7 @@ int IdTarea = 1;
 string DescripcionTarea;
 string ControlTareaRealizada = "";
 string PalabraClave = "";
+int MinutosTrabajados = 0;
 
 Random rand = new Random();
 List<tarea> ListadotareasPendientes = new List<tarea>();
@@ -38,14 +39,11 @@ foreach (var TareaPendiente in ListadotareasPendientes)
 System.Console.WriteLine("\n-----Control de tareas realizadas-----\n");
 foreach (var tareaPendiente in ListadotareasPendientes)
 {
-    tareaPendiente.mostrarTarea();
-    System.Console.WriteLine("La tarea se realizo (s/n)?");
+    System.Console.WriteLine("La tarea " + tareaPendiente.Descripcion + " se realizo (s/n)?");
     ControlTareaRealizada = Console.ReadLine();
     if (ControlTareaRealizada == "s")
     {
-        tarea NuevaTareaRealizada = new tarea();
-        NuevaTareaRealizada = tareaPendiente;
-        ListadotareasRealizadas.Add(NuevaTareaRealizada);
+        ListadotareasRealizadas.Add(tareaPendiente);
     }
 }
 ListadotareasPendientes = ListadotareasPendientes.Except(ListadotareasRealizadas).ToList();
@@ -72,3 +70,9 @@ foreach (var tareaRealizada in ListadotareasRealizadas)
 {
     tareaRealizada.buscarTarea(PalabraClave);
 }
+
+foreach (var tareaRealizada in ListadotareasRealizadas)
+{
+    MinutosTrabajados += tareaRealizada.Duracion;
+}
+System.Console.WriteLine("\nTotal de minutos trabajados por el empleado: " + MinutosTrabajados);
