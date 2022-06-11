@@ -6,6 +6,7 @@ string salida = "";
 int IdTarea = 1;
 string DescripcionTarea;
 string ControlTareaRealizada = "";
+string PalabraClave = "";
 
 Random rand = new Random();
 List<tarea> ListadotareasPendientes = new List<tarea>();
@@ -45,9 +46,9 @@ foreach (var tareaPendiente in ListadotareasPendientes)
         tarea NuevaTareaRealizada = new tarea();
         NuevaTareaRealizada = tareaPendiente;
         ListadotareasRealizadas.Add(NuevaTareaRealizada);
-        ListadotareasPendientes.Remove(tareaPendiente));
     }
 }
+ListadotareasPendientes = ListadotareasPendientes.Except(ListadotareasRealizadas).ToList();
 
 System.Console.WriteLine("\n-----Listado de tareas pendientes-----\n");
 foreach (var TareaPendiente in ListadotareasPendientes)
@@ -59,4 +60,15 @@ System.Console.WriteLine("\n-----Listado de tareas realizadas-----\n");
 foreach (var TareaRealizada in ListadotareasRealizadas)
 {
     TareaRealizada.mostrarTarea();
+}
+
+System.Console.WriteLine("-----Ingrese la descripcion de la tarea a buscar:");
+PalabraClave = Console.ReadLine();
+foreach (var tareaPendiente in ListadotareasPendientes)
+{
+    tareaPendiente.buscarTarea(PalabraClave);
+}
+foreach (var tareaRealizada in ListadotareasRealizadas)
+{
+    tareaRealizada.buscarTarea(PalabraClave);
 }

@@ -37,12 +37,21 @@ namespace tp07_2022_exequiel1984
         }
 
         public void buscarTarea(string palabraClave){
-            if (palabraClave == Descripcion)
+            
+                if (palabraClave == Descripcion){
+                        System.Console.WriteLine("Tarea: " + TareaID);
+                        System.Console.WriteLine("Descripcion: " + Descripcion);
+                        System.Console.WriteLine("Duracion: " + Duracion);
+                }    
+            
+            /* foreach (var TareaRealizada in ListadoTareasRealizadas)
             {
-                System.Console.WriteLine("Tarea: " + TareaID);
-                System.Console.WriteLine("Descripcion: " + Descripcion);
-                System.Console.WriteLine("Duracion: " + Duracion);
-            }
+                if (palabraClave == TareaRealizada.Descripcion){
+                        System.Console.WriteLine("Tarea: " + TareaRealizada.TareaID);
+                        System.Console.WriteLine("Descripcion: " + TareaRealizada.Descripcion);
+                        System.Console.WriteLine("Duracion: " + TareaRealizada.Duracion);
+                }    
+            } */
         }
     }
 }
